@@ -49,18 +49,25 @@
          <div class="main-product">
             <div class="container">
             <br>
-<%
+               <div class="row clearfix">
+                  <%
+        for(int i=0; i<4; i++){
             while((rec != null)&&(rec.next())){
 %>
-               <div class="row clearfix">
                   <div class="col-lg-3 col-sm-6 col-md-3">
-                     <a href="productpage.html">
-                        <div class="box-img">
-                           <h4><%=rec.getString("name")%></h4>
-                           <img src="images/product/<%=rec.getString("image")%>" alt="" />
+                     <a href="detail.jsp?id=<%=rec.getString("id")%>">
+                        <div class="box-img" style="height: 350px; color: #ffffff;">
+                        <br>
+                           <h1><%=rec.getString("name")%></h1>
+                           <br>
+                           <img src="<%=rec.getString("image")%>" alt="" />
+                           <br><br>
+                           <h1>Price : <%=rec.getString("price")%> ฿ </h1>
+                           <br>
                         </div>
                      </a>
                   </div>
+                  <% } %>
                </div>
                <br><br>
             </div>
