@@ -16,7 +16,7 @@
                 Class.forName("com.mysql.jdbc.Driver");
                 connect = DriverManager.getConnection("jdbc:mysql://localhost/oom_shop"+"?user=root&password=12345678");
                 s = connect.createStatement();
-				String sql = ("select * from item where id = "+id); 
+				    String sql = ("select * from item where id = "+id); 
                 ResultSet rec = s.executeQuery(sql);
 			%>
             <%
